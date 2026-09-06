@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Camino al Lombardi</title>
+<meta name="description" content="Interactivo sobre toda la historia de la NFL y el Super Bowl: origenes, jugadas legendarias, leyendas, trivia y los sesenta campeones del Trofeo Vince Lombardi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+
+<div class="progress" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+<nav class="rail" id="rail" aria-label="Capítulos de la historia">
+  <button class="rail-item" data-target="hero"><span class="rail-dot"></span><span class="rail-label">Kickoff</span></button>
+  <button class="rail-item" data-target="origenes"><span class="rail-dot"></span><span class="rail-label">Orígenes</span></button>
+  <button class="rail-item" data-target="nace-era"><span class="rail-dot"></span><span class="rail-label">Nace una era</span></button>
+  <button class="rail-item" data-target="jugada"><span class="rail-dot"></span><span class="rail-label">Jugada legendaria</span></button>
+  <button class="rail-item" data-target="leyendas"><span class="rail-dot"></span><span class="rail-label">Leyendas</span></button>
+  <button class="rail-item" data-target="trivia"><span class="rail-dot"></span><span class="rail-label">Trivia</span></button>
+  <button class="rail-item" data-target="trofeo"><span class="rail-dot"></span><span class="rail-label">El Trofeo</span></button>
+  <button class="rail-item" data-target="legado"><span class="rail-dot"></span><span class="rail-label">Galería</span></button>
+</nav>
+
+<button class="ambient-toggle" id="ambientToggle" aria-pressed="false">
+  <span class="ambient-dot"></span><span id="ambientLabel">Sonido: estadio</span>
+</button>
+
+<header class="hero" id="hero">
+  <div class="hero-poster">
+    <img class="hero-poster-img" src="assets/camino-lombardi-portada.jpg"
+      alt="Cartel El camino al Lombardi: desde los orígenes de la NFL en 1920, pasando por jugadores de distintas épocas y equipos, hasta el Trofeo Vince Lombardi."
+      width="1408" height="768" loading="eager">
+  </div>
+
+  <div class="hero-badges">
+    <span class="badge">Fundada en 1920</span>
+    <span class="badge">60 Súper Tazones</span>
+    <span class="badge">20 franquicias campeonas</span>
+  </div>
+  <div class="scroll-cue">
+    <span>Desplázate para empezar</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== Orígenes ===================== -->
+  <section class="chapter" id="origenes">
+    <div class="container">
+      <div class="chapter-head">
+        <span class="chapter-kicker">Capítulo 1 · 1920–1966</span>
+        <h2 class="chapter-title">Antes de que existiera el trofeo</h2>
+        <p class="chapter-lede">
+          La NFL nació casi medio siglo antes del primer Súper Tazón, en una época de ligas rivales,
+          campeonatos de una sola tabla y un juego que apenas se parecía al de hoy.
+        </p>
+      </div>
+      <div class="stat-grid" data-stats>
+        <div class="stat-tile"><span class="stat-value" data-count="1920">0</span><span class="stat-label">Fundación de la liga, como American Professional Football Association</span></div>
+        <div class="stat-tile"><span class="stat-value" data-count="1922">0</span><span class="stat-label">Adopta el nombre National Football League</span></div>
+        <div class="stat-tile"><span class="stat-value" data-count="1933">0</span><span class="stat-label">Primer Juego de Campeonato de la NFL</span></div>
+        <div class="stat-tile"><span class="stat-value" data-count="1960">0</span><span class="stat-label">Nace la American Football League, la gran rival</span></div>
+      </div>
+      <p class="callout">
+        En 1966, NFL y AFL firmaron un acuerdo de fusión que tardaría años en completarse del todo —
+        pero que de inmediato produjo algo nuevo: un juego de campeones entre las dos ligas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== Nace una era ===================== -->
+  <section class="chapter" id="nace-era">
+    <div class="container">
+      <div class="chapter-head">
+        <span class="chapter-kicker">Capítulo 2 · 1967–1970</span>
+        <h2 class="chapter-title">El hombre detrás del nombre</h2>
+        <p class="chapter-lede">
+          Vince Lombardi nunca vio un trofeo con su nombre. Ganó los primeros dos Súper Tazones al frente
+          de Green Bay Packers y murió en 1970, meses después de dejar de dirigir. La NFL bautizó entonces
+          el trofeo en su honor.
+        </p>
+      </div>
+
+      <div class="scoreboard">
+        <div class="scoreboard-row">
+          <div class="sb-team"><span class="sb-team-name win">Packers</span><span class="sb-score win" data-count="33">0</span></div>
+          <span class="sb-dash">–</span>
+          <div class="sb-team"><span class="sb-score" data-count="14">0</span><span class="sb-team-name">Raiders</span></div>
+        </div>
+        <p class="scoreboard-meta">Súper Tazón II · 1968 · segundo título consecutivo de Lombardi, su despedida de las canchas</p>
+      </div>
+
+      <p class="callout">
+        El primer juego, en enero de 1967, ni siquiera se llamaba "Súper Tazón" — era el AFL-NFL World
+        Championship Game. La fusión completa de ambas ligas, con una sola tabla de posiciones, llegó
+        hasta la temporada de 1970.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== Jugada legendaria ===================== -->
+  <section class="chapter" id="jugada">
+    <div class="container">
+      <div class="chapter-head">
+        <span class="chapter-kicker">Capítulo 3 · 23 de diciembre de 1972</span>
+        <h2 class="chapter-title">La jugada que quedó grabada</h2>
+        <p class="chapter-lede">
+          Playoffs de 1972, Steelers contra Raiders. A 22 segundos del final, un pase rebotado terminó en
+          las manos de Franco Harris, casi a ras de piso, para el touchdown de la victoria — una de las
+          jugadas más discutidas y replayadas en la historia de la liga.
+        </p>
+      </div>
+
+      <div class="play-block">
+        <div class="play-svg-wrap">
+          <svg viewBox="0 0 600 220" id="playSvg" role="img" aria-label="Diagrama de la Recepción Inmaculada">
+            <defs>
+              <pattern id="yardlines" width="60" height="220" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="0" y2="220" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect width="600" height="220" fill="#0a3a24"/>
+            <rect width="600" height="220" fill="url(#yardlines)"/>
+            <rect x="0" y="0" width="26" height="220" fill="#08301d"/>
+            <rect x="574" y="0" width="26" height="220" fill="#08301d"/>
+            <path id="returnPath" d="M40,190 C120,150 90,60 200,70 S 420,150 560,40" fill="none" stroke="rgba(244,240,230,.55)" stroke-width="3" stroke-dasharray="6 8"/>
+            <circle id="ballMarker" cx="40" cy="190" r="8" fill="#f4f0e6" stroke="#D50A0A" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="play-actions">
+          <button class="btn" id="playPlay">Ver la jugada legendaria</button>
+          <span class="play-caption">Franco Harris atrapa el balón deflectado y corre para el touchdown que le dio a Pittsburgh su primer triunfo de playoffs.</span>
+        </div>
+      </div>
+
+      <p class="callout">Se le conoce como <strong>"The Immaculate Reception"</strong> — la Recepción Inmaculada —
+        y muchos la consideran la jugada más famosa en la historia de la NFL.</p>
+    </div>
+  </section>
+
+  <!-- ===================== Leyendas ===================== -->
+  <section class="chapter" id="leyendas">
+    <div class="container">
+      <div class="chapter-head">
+        <span class="chapter-kicker">Capítulo 4 · Cien años de grandeza</span>
+        <h2 class="chapter-title">Las leyendas de la NFL</h2>
+        <p class="chapter-lede">
+          Jugadores y entrenadores de distintas décadas que redefinieron lo que este deporte podía ser.
+        </p>
+      </div>
+      <div class="legends-grid">
+        <div class="legend-card">
+          <div class="legend-avatar" style="background:linear-gradient(150deg,#311D00,#FF3C00)">JB</div>
+          <div class="legend-body">
+            <div class="legend-meta">RB · Cleveland Browns · 1957–1965</div>
+            <div class="legend-name">Jim Brown</div>
+            <p class="legend-blurb">Se retiró en la cima, a los 29 años, como el corredor más dominante que la liga había visto. Para muchos, sigue siendo el mejor de la historia.</p>
+          </div>
+        </div>
+        <div class="legend-card">
+          <div class="legend-avatar" style="background:linear-gradient(150deg,#002C5F,#A5ACAF)">JU</div>
+          <div class="legend-body">
+            <div class="legend-meta">QB · Baltimore Colts · 1956–1973</div>
+            <div class="legend-name">Johnny Unitas</div>
+            <p class="legend-blurb">El primer gran mariscal de campo de la era de la televisión. Redefinió la posición casi una década antes de que existiera el Súper Tazón.</p>
+          </div>
+        </div>
+        <div class="legend-card">
+          <div class="legend-avatar" style="background:linear-gradient(150deg,#203731,#FFB612)">VL</div>
+          <div class="legend-body">
+            <div class="legend-meta">Entrenador en jefe · Green Bay Packers</div>
+            <div class="legend-name">Vince Lombardi</div>
+            <p class="legend-blurb">Cinco campeonatos de la NFL en siete años, incluidos los dos primeros Súper Tazones. El trofeo lleva su nombre desde 1971.</p>
+          </div>
+        </div>
+        <div class="legend-card">
+          <div class="legend-avatar" style="background:linear-gradient(150deg,#AA0000,#B3995D)">JM</div>
+          <div class="legend-body">
+            <div class="legend-meta">QB · San Francisco 49ers · 1979–1992</div>
+            <div class="legend-name">Joe Montana</div>
+            <p class="legend-blurb">Cuatro anillos, cero intercepciones en cuatro Súper Tazones. Le decían "Joe Cool" por cómo jugaba los momentos de más presión.</p>
+          </div>
+        </div>
+        <div class="legend-card">
+          <div class="legend-avatar" style="background:linear-gradient(150deg,#AA0000,#B3995D)">JR</div>
+          <div class="legend-body">
+            <div class="legend-meta">WR · San Francisco 49ers · 1985–2004</div>
+            <div class="legend-name">Jerry Rice</div>
+            <p class="legend-blurb">22,895 yardas y 197 touchdowns de recepción: ambos récords históricos, por un margen que nadie más se ha acercado a igualar.</p>
+          </div>
+        </div>
+        <div class="legend-card">
+          <div class="legend-avatar" style="background:linear-gradient(150deg,#041E42,#869397)">ES</div>
+          <div class="legend-body">
+            <div class="legend-meta">RB · Dallas Cowboys · 1990–2004</div>
+            <div class="legend-name">Emmitt Smith</div>
+            <p class="legend-blurb">18,355 yardas terrestres en su carrera: la marca más alta en la historia de la liga.</p>
+          </div>
+        </div>
+        <div class="legend-card">
+          <div class="legend-avatar" style="background:linear-gradient(150deg,#002244,#C60C30)">TB</div>
+          <div class="legend-body">
+            <div class="legend-meta">QB · Patriots · Buccaneers · 2000–2022</div>
+            <div class="legend-name">Tom Brady</div>
+            <p class="legend-blurb">Siete anillos de Súper Tazón como jugador — más que cualquier franquicia individual de la NFL.</p>
+          </div>
+        </div>
+        <div class="legend-card">
+          <div class="legend-avatar" style="background:linear-gradient(150deg,#002244,#C60C30)">BB</div>
+          <div class="legend-body">
+            <div class="legend-meta">Entrenador en jefe · New England Patriots</div>
+            <div class="legend-name">Bill Belichick</div>
+            <p class="legend-blurb">Ocho anillos como entrenador en jefe, la marca más alta de la historia: uno más que los que Brady ganó como jugador.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Trivia ===================== -->
+  <section class="chapter" id="trivia">
+    <div class="container">
+      <div class="chapter-head">
+        <span class="chapter-kicker">Capítulo 5 · Pon a prueba tu conocimiento</span>
+        <h2 class="chapter-title">¿Cuánto sabes de la NFL?</h2>
+        <p class="chapter-lede">
+          Trece preguntas para recorrer cien años de historia, de la fundación de la liga en 1920 al
+          Súper Tazón LX.
+        </p>
+      </div>
+      <div class="quiz-card" id="quiz">
+        <div class="quiz-progress" id="quizProgress">Pregunta 1 de 5</div>
+        <p class="quiz-q" id="quizQuestion"></p>
+        <div class="quiz-opts" id="quizOpts"></div>
+        <div class="quiz-explain" id="quizExplain"></div>
+        <div class="quiz-foot">
+          <span class="quiz-score">Aciertos: <b id="quizScore">0</b> / <span id="quizTotal">5</span></span>
+          <button class="btn secondary" id="quizNext" hidden>Siguiente pregunta</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Trofeo ===================== -->
+  <section class="chapter trophy-chapter" id="trofeo">
+    <div class="container">
+      <div class="chapter-head">
+        <span class="chapter-kicker">Capítulo 6 · El objeto de siete libras</span>
+        <h2 class="chapter-title">El Trofeo Vince Lombardi</h2>
+        <p class="chapter-lede">
+          No hay copia. Cada febrero, Tiffany &amp; Co. funde uno nuevo en plata esterlina, y unos días
+          después le graban el nombre del campeón más reciente — el siguiente capítulo de una lista que
+          ya lleva sesenta nombres.
+        </p>
+      </div>
+
+      <div class="trophy-layout">
+        <div class="trophy-stage" id="trophyStage" aria-label="Trofeo Vince Lombardi en 3D interactivo: arrastra para girar, toca los puntos para ver detalles">
+          <div class="ui-header">
+            <div class="ui-badge" id="badge-studio">NFL Interactive Studio</div>
+            <div class="ui-badge" id="badge-trophy" onclick="toggleHotspot('hs-ball')">Vince Lombardi Trophy</div>
+            <div class="ui-badge" id="badge-silver" onclick="toggleHotspot('hs-material')">Plata Esterlina</div>
+          </div>
+          <div id="info">Arrastra para girar · toca los botones o los puntos para ver detalles</div>
+          <div id="hotspots-container">
+            <div class="hotspot" id="hs-ball" onclick="toggleHotspot('hs-ball', event)">
+              <div class="hotspot-dot"></div>
+              <div class="hotspot-card">
+                <h4>Balón Oficial</h4>
+                <p>Balón reglamentario de tamaño natural en posición de patada.</p>
+              </div>
+            </div>
+            <div class="hotspot" id="hs-base" onclick="toggleHotspot('hs-base', event)">
+              <div class="hotspot-dot"></div>
+              <div class="hotspot-card">
+                <h4>Base Piramidal</h4>
+                <p>Diseño cónico de cuatro lados con los nombres de los equipos grabados.</p>
+              </div>
+            </div>
+            <div class="hotspot" id="hs-material" onclick="toggleHotspot('hs-material', event)">
+              <div class="hotspot-dot"></div>
+              <div class="hotspot-card">
+                <h4>Plata Esterlina</h4>
+                <p>Fabricado artesanalmente por Tiffany &amp; Co. con acabado pulido.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ui-footer">
+            <button class="nfl-btn" id="btn-reset">Restablecer vista</button>
+          </div>
+        </div>
+
+        <div class="trophy-facts">
+          <div class="fact-tile"><span class="fact-label">Altura</span><span class="fact-value">22 pulgadas (56 cm)</span></div>
+          <div class="fact-tile"><span class="fact-label">Peso</span><span class="fact-value">≈ 7 lb (107.3 oz)</span></div>
+          <div class="fact-tile"><span class="fact-label">Material</span><span class="fact-value">Plata esterlina</span></div>
+          <div class="fact-tile"><span class="fact-label">Fabricante</span><span class="fact-value">Tiffany &amp; Co.</span></div>
+          <div class="fact-tile"><span class="fact-label">Tiempo de manufactura</span><span class="fact-value">≈ 4 meses</span></div>
+          <div class="fact-tile"><span class="fact-label">Diseño</span><span class="fact-value">Balón en posición de pateo sobre base tricóncava</span></div>
+          <div class="fact-tile"><span class="fact-label">Grabado</span><span class="fact-value">Equipos, marcador y fecha, tras la final</span></div>
+          <div class="fact-tile"><span class="fact-label">Propiedad</span><span class="fact-value">Se queda permanente con el campeón</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Legado ===================== -->
+  <section class="chapter" id="legado">
+    <div class="wide">
+      <div class="chapter-head">
+        <span class="chapter-kicker">Capítulo 7 · Salón de los campeones</span>
+        <h2 class="chapter-title">Sesenta finales, un solo trofeo</h2>
+        <p class="chapter-lede">
+          Del Súper Tazón I, en 1967, al LX en 2026: toda la historia, equipo por equipo. Explora cualquier
+          año de la lista, o revisa abajo qué franquicias han levantado más veces el Lombardi.
+        </p>
+      </div>
+
+      <div class="timeline-strip" id="timeline" role="listbox" aria-label="Historial completo de Súper Tazones, de 1967 a 2026"></div>
+      <div class="tl-detail" id="tlDetail"></div>
+
+      <div class="champs-board">
+        <div class="champs-board-title">Máximos ganadores del Trofeo Lombardi</div>
+        <div class="champs-board-sub">Las 20 franquicias que han sido campeonas, ordenadas por número de títulos (I–LX)</div>
+        <div id="champsBoard"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Historia de la NFL y los sesenta Súper Tazones, de 1920 a 2026, según registros públicos de la liga · Septiembre 2026</p>
+  </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+<script src="assets/script.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="assets/trophy.js"></script>
+
+</body>
+</html>
