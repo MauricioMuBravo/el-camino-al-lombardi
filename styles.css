@@ -308,6 +308,15 @@
   .champs-bar-track{flex:1;height:6px;background:var(--bg-raised);border-radius:3px;overflow:hidden;min-width:36px;}
   .champs-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent-dim),var(--accent));border-radius:3px;}
   .champs-count{font-family:var(--font-display);color:var(--accent);font-variant-numeric:tabular-nums;width:24px;text-align:right;flex:none;font-size:1.02rem;}
+  @media (max-width:600px){
+    .champs-board{padding:16px 14px;}
+    .champs-row{gap:8px;}
+    .champs-rank{width:14px;font-size:.72rem;}
+    .champs-row .crest{width:20px;height:20px;font-size:7px;}
+    .champs-name{width:auto;flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:.78rem;gap:5px;}
+    .champs-bar-track{flex:0 1 46px;min-width:24px;}
+    .champs-count{width:18px;font-size:.85rem;}
+  }
 
   /* Footer */
   .site-footer{padding:56px 0 90px;text-align:center;color:var(--chalk-faint);font-size:.85rem;}
