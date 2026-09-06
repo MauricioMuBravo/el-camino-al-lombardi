@@ -1,7 +1,7 @@
 /* ============================================================
    El Camino al Lombardi — lógica principal
    Progreso de scroll, navegación, animaciones, trivia, línea de
-   tiempo de campeones y tabla de franquicias más ganadoras.
+   tiempo de campeones, tabla de franquicias y sonido ambiente.
    (El visor 3D del trofeo vive aparte, en trophy.js)
    ============================================================ */
 (function(){
@@ -420,33 +420,31 @@
     champsBoard.appendChild(el);
   });
 
-  /* ---------- Ambient stadium noise (synthesized, no audio file) ---------- */
+  /* ---------- Ambient stadium noise (grabación real, con fundido) ---------- */
   var ambientBtn = document.getElementById("ambientToggle");
   var ambientLabel = document.getElementById("ambientLabel");
-  var audioCtx = null, noiseSource = null, filter = null, gainNode = null, ambientOn = false;
+  var ambientAudio = document.getElementById("ambientAudio");
+  var audioCtx = null, ambientGain = null, ambientSource = null, ambientOn = false;
+  function ensureAmbientGraph(){
+    if(audioCtx) return;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    ambientSource = audioCtx.createMediaElementSource(ambientAudio);
+    ambientGain = audioCtx.createGain();
+    ambientGain.gain.value = 0;
+    ambientSource.connect(ambientGain).connect(audioCtx.destination);
+  }
   function startAmbient(){
-    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    var bufferSize = 2 * audioCtx.sampleRate;
-    var buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-    var data = buffer.getChannelData(0);
-    for(var i=0;i<bufferSize;i++){ data[i] = Math.random() * 2 - 1; }
-    noiseSource = audioCtx.createBufferSource();
-    noiseSource.buffer = buffer;
-    noiseSource.loop = true;
-    filter = audioCtx.createBiquadFilter();
-    filter.type = "bandpass";
-    filter.frequency.value = 420;
-    filter.Q.value = 0.6;
-    gainNode = audioCtx.createGain();
-    gainNode.gain.value = 0;
-    noiseSource.connect(filter).connect(gainNode).connect(audioCtx.destination);
-    noiseSource.start();
-    gainNode.gain.linearRampToValueAtTime(0.05, audioCtx.currentTime + 0.6);
+    ensureAmbientGraph();
+    if(audioCtx.state === "suspended") audioCtx.resume();
+    ambientAudio.play().catch(function(){});
+    ambientGain.gain.cancelScheduledValues(audioCtx.currentTime);
+    ambientGain.gain.linearRampToValueAtTime(0.55, audioCtx.currentTime + 0.6);
   }
   function stopAmbient(){
-    if(!gainNode || !audioCtx) return;
-    gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.4);
-    setTimeout(function(){ if(noiseSource){ try{noiseSource.stop();}catch(e){} noiseSource=null; } }, 500);
+    if(!ambientGain || !audioCtx) return;
+    ambientGain.gain.cancelScheduledValues(audioCtx.currentTime);
+    ambientGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.4);
+    setTimeout(function(){ ambientAudio.pause(); }, 450);
   }
   ambientBtn.addEventListener("click", function(){
     ambientOn = !ambientOn;
